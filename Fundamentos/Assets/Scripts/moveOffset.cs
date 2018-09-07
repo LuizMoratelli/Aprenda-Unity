@@ -8,9 +8,11 @@ public class moveOffset : MonoBehaviour {
     private Material _material;
     private Texture _texture;
 
-    private float offset;
-    private float divisor = 1000;
-    public float offsetIncrement = 1;
+    private float offsetX;
+    private float offsetY;
+    private float divisor = 2000;
+    public float offsetIncrementX = 1;
+    public float offsetIncrementY = 0;
     public string sortingLayer = "Background";
     public int orderInLayer = 0;
 
@@ -25,7 +27,8 @@ public class moveOffset : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        offset += (offsetIncrement * divisor);
-        _material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        offsetX += (offsetIncrementX * divisor);
+        offsetY += (offsetIncrementY * divisor);
+        _material.SetTextureOffset("_MainTex", new Vector2(offsetX, offsetY));
 	}
 }
