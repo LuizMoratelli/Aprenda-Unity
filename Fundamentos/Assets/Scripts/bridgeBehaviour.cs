@@ -21,6 +21,5 @@ public class bridgeBehaviour : MonoBehaviour {
         if (transform.position.x < _gameController.destructionDistance.position.x) {
             Destroy(this.gameObject);
         }
-
 	}
 }
