@@ -30,6 +30,23 @@ public class gameController : MonoBehaviour {
     public Transform barrelInstatiateBottom; 
     public float barrelTimeToSpawn;
     public GameObject barrel;
+
+    [Header("Player Configuration")]
+    public playerBehaviour _playerBehaviour;
+    public Vector3 playerCurrentPosition;
+
+    [Header("Score Configuration")]
+    private int score;
+
+    public int Score {
+        get {
+            return score;
+        }
+    }
+
+    public void toScore (int addScore) {
+        score += addScore;
+    }
     
     [Header("Global Configuration")]
     public Transform destructionDistance;
@@ -38,9 +55,15 @@ public class gameController : MonoBehaviour {
 
 	void Start () {
 		BridgeWidth = bridge.gameObject.GetComponent<SpriteRenderer>().size.x;
-
+    
         StartCoroutine("barrelSpawn");
+
+        _playerBehaviour = FindObjectOfType(typeof(playerBehaviour)) as playerBehaviour;
 	}
+
+    private void LateUpdate() {
+        playerCurrentPosition = _playerBehaviour.transform.position;
+    }
 
     IEnumerator barrelSpawn () {
         yield return new WaitForSeconds(barrelTimeToSpawn);
