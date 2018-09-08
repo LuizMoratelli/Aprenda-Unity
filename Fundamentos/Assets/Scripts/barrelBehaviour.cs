@@ -32,6 +32,6 @@ public class barrelBehaviour : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Bateu");
+        _gameController.changeScene("Gameover");
     }
 }

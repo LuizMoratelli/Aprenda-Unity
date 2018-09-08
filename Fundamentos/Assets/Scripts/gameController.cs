@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour {
 
@@ -81,6 +82,10 @@ public class gameController : MonoBehaviour {
         }
 
         StartCoroutine("barrelSpawn");
+    }
+
+    public void changeScene (string destinationScene) {
+        SceneManager.LoadScene(destinationScene);
     }
 
 }
