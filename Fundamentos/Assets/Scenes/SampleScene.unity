@@ -113,6 +113,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &196138654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1466369918545764, guid: e994f49c7bf4f534298f9c442e861f3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 651702500}
+--- !u!61 &196138655
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 196138654}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0059999973, y: -0.085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.13}
+  m_EdgeRadius: 0
 --- !u!1 &235372444
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +283,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &651702500
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708396535481984, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1018181704
 Prefab:
   m_ObjectHideFlags: 0
@@ -503,6 +575,7 @@ GameObject:
   - component: {fileID: 1349442005}
   - component: {fileID: 1349442009}
   - component: {fileID: 1349442008}
+  - component: {fileID: 1349442010}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -581,7 +654,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1349442004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalPosition: {x: 0, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1756856579}
@@ -619,6 +692,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1349442010
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349442004}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046101972, y: 0.1203759}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6666667, y: 0.8333333}
+    newSize: {x: 0.6666667, y: 0.8333333}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32175574, y: 0.16921026}
+  m_EdgeRadius: 0
 --- !u!1 &1687390386
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +768,8 @@ MonoBehaviour:
   barrelInstatiateBottom: {fileID: 1272760563}
   barrelTimeToSpawn: 1
   barrel: {fileID: 1466369918545764, guid: e994f49c7bf4f534298f9c442e861f3a, type: 2}
+  _playerBehaviour: {fileID: 0}
+  playerCurrentPosition: {x: 0, y: 0, z: 0}
   destructionDistance: {fileID: 276021225}
   playableArea: {fileID: 235372445}
   objectSpeed: -1.5
@@ -783,7 +883,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710707170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -0.6, z: 0}
+  m_LocalPosition: {x: -3.5, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235372445}
