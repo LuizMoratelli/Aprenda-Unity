@@ -14,7 +14,7 @@ public class bridgeBehaviour : MonoBehaviour {
 		_gameController = FindObjectOfType(typeof(gameController)) as gameController;
 
         // Velocity utiliza física, então não é necessário utilizar Time.DeltaTime()
-		Vector2 movement = new Vector2(_gameController.bridgeSpeed, 0);
+		Vector2 movement = new Vector2(_gameController.objectSpeed, 0);
         _rigidBody.velocity = movement;
 	}
 	

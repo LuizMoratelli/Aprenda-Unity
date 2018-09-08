@@ -10,22 +10,54 @@ public class gameController : MonoBehaviour {
     [Header("Bridge Configuration")]
     public Transform bridgeMax;
     public Transform bridgeMin;
-    public float bridgeSpeed;
     public GameObject bridge;
     private float bridgeWidth;
 
+    // Permite que um script acesse a propriedade privada
     public float BridgeWidth {
         get {
             return bridgeWidth;
         }
+        private set {
+            bridgeWidth = value;
+        }
     }
+
+    [Header("Barrel Configuration")]
+    public int barrelOrderTop;
+    public int barrelOrderDown;
+    public Transform barrelInstatiateTop; 
+    public Transform barrelInstatiateBottom; 
+    public float barrelTimeToSpawn;
+    public GameObject barrel;
     
     [Header("Global Configuration")]
     public Transform destructionDistance;
     public Transform playableArea;
+    public float objectSpeed;
 
 	void Start () {
-		bridgeWidth = bridge.gameObject.GetComponent<SpriteRenderer>().size.x;
+		BridgeWidth = bridge.gameObject.GetComponent<SpriteRenderer>().size.x;
+
+        StartCoroutine("barrelSpawn");
 	}
+
+    IEnumerator barrelSpawn () {
+        yield return new WaitForSeconds(barrelTimeToSpawn);
+
+        int rand = Random.Range(0, 100);
+        GameObject newBarrel = Instantiate(barrel);
+
+        if (rand < 50) {
+            newBarrel.transform.position = barrelInstatiateTop.position;
+            // Quando o componente será usado várias vezes, uma variável para contê-lo será mais rápida
+            newBarrel.GetComponent<SpriteRenderer>().sortingOrder = barrelOrderTop;
+        } else {
+            newBarrel.transform.position = barrelInstatiateBottom.position;
+            newBarrel.GetComponent<SpriteRenderer>().sortingOrder = barrelOrderDown;
+        }
+
+        StartCoroutine("barrelSpawn");
+    }
 
 }
