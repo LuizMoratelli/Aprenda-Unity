@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameController : MonoBehaviour {
 
@@ -38,15 +39,12 @@ public class gameController : MonoBehaviour {
 
     [Header("Score Configuration")]
     private int score;
+    public Text scoreText;
 
     public int Score {
         get {
             return score;
         }
-    }
-
-    public void toScore (int addScore) {
-        score += addScore;
     }
     
     [Header("Global Configuration")]
@@ -82,6 +80,11 @@ public class gameController : MonoBehaviour {
         }
 
         StartCoroutine("barrelSpawn");
+    }
+
+    public void toScore (int addScore) {
+        score += addScore;
+        scoreText.text = "Score: " + score;
     }
 
     public void changeScene (string destinationScene) {
