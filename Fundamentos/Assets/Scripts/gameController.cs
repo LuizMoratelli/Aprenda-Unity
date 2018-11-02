@@ -52,6 +52,10 @@ public class gameController : MonoBehaviour {
     public Transform playableArea;
     public float objectSpeed;
 
+    [Header("FX Sound")]
+    public AudioSource fxSource;
+    public AudioClip fxScore;
+
 	void Start () {
 		BridgeWidth = bridge.gameObject.GetComponent<SpriteRenderer>().size.x;
     
@@ -85,6 +89,7 @@ public class gameController : MonoBehaviour {
     public void toScore (int addScore) {
         score += addScore;
         scoreText.text = "Score: " + score;
+        fxSource.PlayOneShot(fxScore);
     }
 
     public void changeScene (string destinationScene) {
