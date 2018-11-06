@@ -26,9 +26,11 @@ public class bridgeBehaviour : MonoBehaviour {
 
         // Instancia a nova ponte caso exista apenas uma ponte
         if (!instantiated) {
-            if (transform.position.x < _gameController.bridge.transform.position.x) {
+            int idBridge = Random.Range(0, 2);
+
+            if (transform.position.x < _gameController.bridge[idBridge].transform.position.x) {
                 instantiated = true;
-                GameObject newBridge = Instantiate(_gameController.bridge); // Instancia a nova ponte
+                GameObject newBridge = Instantiate(_gameController.bridge[idBridge]); // Instancia a nova ponte
                 // Define a posiação da nova ponte como a posição da ponte atual mais a largura do prefab da ponte
                 newBridge.transform.position = new Vector2 (transform.position.x + _gameController.BridgeWidth, transform.position.y);
                 // Define que a nova ponte será filha da Área jogável

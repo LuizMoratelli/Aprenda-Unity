@@ -12,7 +12,7 @@ public class gameController : MonoBehaviour {
     [Header("Bridge Configuration")]
     public Transform bridgeMax;
     public Transform bridgeMin;
-    public GameObject bridge;
+    public GameObject[] bridge;
     private float bridgeWidth;
 
     // Permite que um script acesse a propriedade privada
@@ -57,15 +57,15 @@ public class gameController : MonoBehaviour {
     public AudioClip fxScore;
 
 	void Start () {
-		BridgeWidth = bridge.gameObject.GetComponent<SpriteRenderer>().size.x;
+		BridgeWidth = bridge[0].gameObject.GetComponent<SpriteRenderer>().size.x;
     
-        StartCoroutine("barrelSpawn");
+        //StartCoroutine("barrelSpawn");
 
         _playerBehaviour = FindObjectOfType(typeof(playerBehaviour)) as playerBehaviour;
 	}
 
     private void LateUpdate() {
-        playerCurrentPosition = _playerBehaviour.transform.position;
+        //playerCurrentPosition = _playerBehaviour.transform.position;
     }
 
     IEnumerator barrelSpawn () {
