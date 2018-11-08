@@ -88,7 +88,7 @@ public class gameController : MonoBehaviour {
 
     public void toScore (int addScore) {
         score += addScore;
-        scoreText.text = "Score: " + score;
+        scoreText.text = "" + score;
         fxSource.PlayOneShot(fxScore);
     }
 
