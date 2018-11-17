@@ -564,21 +564,6 @@ Prefab:
       propertyPath: _pontuacao
       value: 
       objectReference: {fileID: 779740405}
-    - target: {fileID: 114853812358776748, guid: 9b8c66c332c219e42825f9fb1db2e366,
-        type: 2}
-      propertyPath: jumpForce
-      value: 750
-      objectReference: {fileID: 0}
-    - target: {fileID: 50121346812435090, guid: 9b8c66c332c219e42825f9fb1db2e366,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 50121346812435090, guid: 9b8c66c332c219e42825f9fb1db2e366,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8c66c332c219e42825f9fb1db2e366, type: 2}
   m_IsPrefabAsset: 0
