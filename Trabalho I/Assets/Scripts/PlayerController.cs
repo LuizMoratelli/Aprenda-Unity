@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     public int score;
     private int speedX;
     private float speedY;
+    public bool isLeft;
     
     [Header("Componentes do Personagem")]
     private Rigidbody2D _rigidbody;
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour {
         } else {
             speedX = 1;
         }
+
+        if ((horizontal < 0 && !isLeft) || (horizontal > 0 && isLeft)) {
+            Flip();
+        }
 	}
 
     private void LateUpdate() {
@@ -64,5 +69,10 @@ public class PlayerController : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
         }
+    }
+
+    private void Flip() {
+        isLeft = !isLeft;
+        transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
 }
