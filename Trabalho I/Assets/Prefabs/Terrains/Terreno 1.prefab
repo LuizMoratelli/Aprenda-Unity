@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4007473137595082}
   - component: {fileID: 212880656367446034}
   - component: {fileID: 61594387632963544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pedra (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61344764344149844}
   - component: {fileID: 50959577544795438}
   - component: {fileID: 114400997525841472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terreno 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4254335901386920}
   - component: {fileID: 212795106362103086}
   - component: {fileID: 61235271383189806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (1)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4451541132124988}
   - component: {fileID: 212154604341790896}
   - component: {fileID: 61314838234700010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -267,10 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d19e29d5579d2e4f8acd4695e6c18f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _terrainPrefabs:
-  - {fileID: 1199732376695042, guid: ddec0cb0440b66144bf33dd98da15755, type: 2}
-  - {fileID: 1396208121442838}
-  - {fileID: 1301099480548482, guid: fab0dd24d75dee34ea757567327d1352, type: 2}
 --- !u!212 &212154604341790896
 SpriteRenderer:
   m_ObjectHideFlags: 1

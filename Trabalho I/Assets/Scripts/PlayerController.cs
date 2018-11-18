@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour {
     private int speedX;
     private float speedY;
     public bool isLeft;
+    public LayerMask whatIsGround;
+    public int maxExtraJumps;
+    private int extraJumps;
     
     [Header("Componentes do Personagem")]
     private Rigidbody2D _rigidbody;
@@ -24,17 +27,23 @@ public class PlayerController : MonoBehaviour {
 	private void Start () {
 		_rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+
+        extraJumps = maxExtraJumps;
 	}
 
     private void FixedUpdate() {
-        isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.02f);
+        isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.02f, whatIsGround);
     }
 
     private void Update () {
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && isGrounded) {
-            _rigidbody.AddForce(new Vector2(0, jumpForce));
+        if (isGrounded) {
+            extraJumps = maxExtraJumps;
+        }
+
+        if (Input.GetButtonDown("Jump") && ((extraJumps > 0) || isGrounded )) {
+            Jump();
         }
 
         speedY = _rigidbody.velocity.y;
@@ -69,6 +78,11 @@ public class PlayerController : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
         }
+    }
+
+    public void Jump() {
+        _rigidbody.AddForce(new Vector2(0, jumpForce));
+        extraJumps--;
     }
 
     private void Flip() {

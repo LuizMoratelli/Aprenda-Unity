@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4830153410166432}
   - component: {fileID: 212688774088951294}
   - component: {fileID: 61459370729283812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (1)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61173210900565672}
   - component: {fileID: 50611755901295654}
   - component: {fileID: 114010495637987814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terreno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4254089128675324}
   - component: {fileID: 212480076868395122}
   - component: {fileID: 61191902158638496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (3)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4029937842198884}
   - component: {fileID: 212942349868510882}
   - component: {fileID: 61880735371212434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4447453495168126}
   - component: {fileID: 212672495919211384}
   - component: {fileID: 61016390474556826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (2)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -323,11 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d19e29d5579d2e4f8acd4695e6c18f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainSpeed: 0
-  _terrainPrefabs:
-  - {fileID: 1199732376695042}
-  - {fileID: 1396208121442838, guid: 339cf8ec9424d1047a9da9653a4a92cb, type: 2}
-  - {fileID: 1301099480548482, guid: fab0dd24d75dee34ea757567327d1352, type: 2}
 --- !u!212 &212161258564063172
 SpriteRenderer:
   m_ObjectHideFlags: 1

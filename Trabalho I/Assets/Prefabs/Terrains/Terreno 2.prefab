@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4309899314885994}
   - component: {fileID: 212441345512825386}
   - component: {fileID: 61518207466686322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pedra
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61321081766970200}
   - component: {fileID: 50241761744404860}
   - component: {fileID: 114908334778377330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terreno 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4473624737599620}
   - component: {fileID: 212205690051061654}
   - component: {fileID: 61345549780635370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (3)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4556461722428652}
   - component: {fileID: 212051278411283908}
   - component: {fileID: 61165217536442360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4866737876253650}
   - component: {fileID: 212419554081937330}
   - component: {fileID: 61463681078726072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (1)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 212024242846952022}
   - component: {fileID: 50662931131552134}
   - component: {fileID: 61650062800736716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flutuante (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4115217613800228}
   - component: {fileID: 212181877546033776}
   - component: {fileID: 61209818307689090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cenoura (2)
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 212236430557298466}
   - component: {fileID: 50161915937243852}
   - component: {fileID: 61238372075040950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flutuante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,10 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d19e29d5579d2e4f8acd4695e6c18f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _terrainPrefabs:
-  - {fileID: 1199732376695042, guid: ddec0cb0440b66144bf33dd98da15755, type: 2}
-  - {fileID: 1396208121442838, guid: 339cf8ec9424d1047a9da9653a4a92cb, type: 2}
-  - {fileID: 1301099480548482}
 --- !u!212 &212024242846952022
 SpriteRenderer:
   m_ObjectHideFlags: 1
