@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
     public GameObject[] _terrainPrefabs;
     public PlayerController _player;
     public float _playerPosY;
+    public int ammoQuantity;
 
 	void Start () {
 		_player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -17,4 +18,8 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		_playerPosY = _player.transform.position.y;
 	}
+
+    public void changeAmmoQuantity(int amount) {
+        ammoQuantity += amount;
+    }
 }

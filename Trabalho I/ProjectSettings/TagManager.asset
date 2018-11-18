@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Collectible
+  - Projectile
   layers:
   - Default
   - TransparentFX
