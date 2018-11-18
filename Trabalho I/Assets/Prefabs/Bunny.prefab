@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46215f960b4853a478693a9d8d8c7db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 600
+  jumpForce: 700
   movementSpeed: 5
   score: 0
   isLeft: 0
@@ -201,10 +201,15 @@ MonoBehaviour:
     m_Bits: 256
   maxExtraJumps: 1
   shotForce: 12
+  throwGranadeForceX: 300
+  throwGranadeForceY: 400
   ttlAmmo: 2
+  timeBtwShots: 0.2
+  timeBtwThrowGranades: 0.5
   _groundCheck: {fileID: 4930738999097258}
   _pontuacao: {fileID: 0}
   _ammo: {fileID: 1285687398828666, guid: 6f5e09974566ff6448118c17876cc3e5, type: 2}
+  _granade: {fileID: 1004224563181942, guid: 35ac1c64c423b1947ae91f922a752a58, type: 2}
   _shotPoint: {fileID: 1202805853603886}
 --- !u!212 &212465276050568754
 SpriteRenderer:

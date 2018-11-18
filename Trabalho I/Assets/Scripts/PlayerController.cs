@@ -18,9 +18,13 @@ public class PlayerController : MonoBehaviour {
     public int maxExtraJumps;
     private int extraJumps;
     public float shotForce;
+    public float throwGranadeForceX;
+    public float throwGranadeForceY;
     public float ttlAmmo;
     public float timeBtwShots;
+    public float timeBtwThrowGranades;
     private bool canShot = true;
+    private bool canThrowGranade = true;
     
     [Header("Componentes do Personagem")]
     private Rigidbody2D _rigidbody;
@@ -28,6 +32,7 @@ public class PlayerController : MonoBehaviour {
     public Text _pontuacao;
     private Animator _animator;
     public GameObject _ammo;
+    public GameObject _granade;
     public GameObject _shotPoint;
     private GameController _gameController;
 
@@ -71,6 +76,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Fire1") && _gameController.ammoQuantity > 0 && canShot) {
             Shot();
         }
+
+        if (Input.GetButtonDown("Fire2") && _gameController.ammoQuantity > 0 && canThrowGranade) {
+            ThrowGranade();
+        }
 	}
 
     private void LateUpdate() {
@@ -85,9 +94,16 @@ public class PlayerController : MonoBehaviour {
                 SceneManager.LoadScene("Gameover");
                 break;
             case "Collectible":
-                score += 1;
+                IdItem item = col.GetComponent<IdItem>();
+                string itemName = item.idCategoria;
+                int ammoAmount = item.ammoAmount;
+                int scoreAmount = item.scoreAmount;
+
+                _gameController.changeAmmoQuantity(ammoAmount);
+                score += scoreAmount;
+
                 _pontuacao.text = "Score: " + score;
-                _gameController.changeAmmoQuantity(+1);
+                
                 Destroy(col.gameObject);
                 break;
         }
@@ -102,6 +118,7 @@ public class PlayerController : MonoBehaviour {
         isLeft = !isLeft;
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         shotForce *= -1;
+        throwGranadeForceX *= -1;
     }
 
     private void Shot () {
@@ -117,8 +134,26 @@ public class PlayerController : MonoBehaviour {
         Destroy(ammo, ttlAmmo);
     }
 
+    private void ThrowGranade() {
+        canThrowGranade = false;
+        StartCoroutine("ThrowGranadeDelay");
+
+        _gameController.changeAmmoQuantity(-1);
+
+        GameObject granade = Instantiate(_granade);
+        granade.transform.position = _shotPoint.transform.position;
+        granade.GetComponent<Rigidbody2D>().AddForce(new Vector2(throwGranadeForceX, throwGranadeForceY));
+
+        Destroy(granade, ttlAmmo);
+    }
+
     IEnumerator ShotDelay() {
         yield return new WaitForSeconds(timeBtwShots);
         canShot = true;
+    }
+
+    IEnumerator ThrowGranadeDelay() {
+        yield return new WaitForSeconds(timeBtwShots);
+        canThrowGranade = true;
     }
 }
