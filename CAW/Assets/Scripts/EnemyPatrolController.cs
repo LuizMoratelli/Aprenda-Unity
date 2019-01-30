@@ -51,7 +51,6 @@ public class EnemyPatrolController : MonoBehaviour
         {
             idCheckPoint = 0;
         }
-        Debug.Log(checkPoints[idCheckPoint].position);
 
         movimentar = true;
     }

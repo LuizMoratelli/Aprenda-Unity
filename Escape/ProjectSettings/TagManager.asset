@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Coletavel
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Enemy
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3686994759
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Obstaculos
+    uniqueID: 372604917
+    locked: 0
+  - name: Coletaveis
+    uniqueID: 914335401
+    locked: 0
+  - name: Personagens
+    uniqueID: 4142426381
+    locked: 0
+  - name: UI
+    uniqueID: 2336864725
+    locked: 0

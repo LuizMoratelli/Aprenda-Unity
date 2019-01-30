@@ -272,7 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971319f0f888b92469b9bc1349ac0e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8828498175693140667, guid: 58289a62c90bbeb469399d84c8f7b3b2,
-    type: 3}
   speed: 4
   bulletSpeed: 3
+  idBullet: 0
+  indestructibleColor: {r: 1, g: 1, b: 1, a: 0.6509804}
+  delayPiscar: 0.1
