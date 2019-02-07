@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TMGameController : MonoBehaviour
 {
@@ -19,9 +20,28 @@ public class TMGameController : MonoBehaviour
     [SerializeField] private GameObject hitPrefab;
     [SerializeField] private int hammerDamage;
     [SerializeField] private int ballDamage;
+
+    [Header("UI")]
+    [SerializeField] private Text extraLeftTxt;
+    [SerializeField] private Text coinsTxt;
+    [SerializeField] private Text scoreTxt;
+
+    private int rings;
+    private int score;
     #endregion
 
     #region Public Methods
+    public void ColetarRings()
+    {
+        rings++;
+        coinsTxt.text = rings.ToString();
+        AddScore(10);
+    }
+    public void AddScore(int scoreAmount)
+    {
+        score += scoreAmount;
+        scoreTxt.text = score.ToString();
+    }
     #endregion
 
     #region Private Methods

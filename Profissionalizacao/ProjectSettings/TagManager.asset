@@ -10,6 +10,8 @@ TagManager:
   - HammerHit
   - BallHit
   - PlataformaMovel
+  - ItemLoja
+  - Coletavel
   layers:
   - Default
   - TransparentFX
@@ -55,4 +57,7 @@ TagManager:
     locked: 0
   - name: Agua
     uniqueID: 2975961565
+    locked: 0
+  - name: HUD
+    uniqueID: 2813177319
     locked: 0

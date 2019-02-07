@@ -24,6 +24,12 @@ public class TMPlayerController : MonoBehaviour
     private float gravityBase;
     private Vector2 moveInput;
 
+    // Power Ups
+    private bool haveHammer;
+    private bool haveBall;
+    private bool haveCape;
+    private bool haveDiving = true;
+
     [Header("GroundCheck Configuration")]
     [SerializeField] private Transform groundCheckRight;
     [SerializeField] private Transform groundCheckLeft;
@@ -64,6 +70,27 @@ public class TMPlayerController : MonoBehaviour
         GameObject _ball = Instantiate(ballPrefab, ballSpawn.position, transform.localRotation);
         _ball.GetComponent<Rigidbody2D>().velocity = new Vector2(ballSpeed, 0);
     }
+
+    public void AtualizarItens(int idItem) 
+    {
+        switch (idItem)
+        {
+            case 0:
+                haveHammer = true;
+                break;
+            case 1:
+                haveBall = true;
+                break;
+            case 2:
+                haveCape = true;
+                break;
+            case 3:
+                haveDiving = true;
+                break;
+            default:
+                break;
+        }
+    }
     #endregion
 
     #region Private Methods
@@ -76,13 +103,21 @@ public class TMPlayerController : MonoBehaviour
         }
         if (other.CompareTag("SubMerso"))
         {
-            if (!isSnorkeling)
+            if (!isSnorkeling && haveDiving)
             {
                 isSnorkeling = true;
                 playerRB.velocity = new Vector2(0, 0);
                 playerRB.gravityScale = gravityOnSnorkeling;
             }
-
+        }
+        if (other.CompareTag("ItemLoja"))
+        {
+            // Caso não exista o método, erro é previnido
+            other.SendMessage("AbrirLoja", SendMessageOptions.DontRequireReceiver);
+        }
+        if (other.CompareTag("Coletavel"))
+        {
+            other.SendMessage("Coletavel");
         }
     }
 
@@ -150,7 +185,7 @@ public class TMPlayerController : MonoBehaviour
             }
 
             // Hammer Attack
-            if (Input.GetButtonDown("Fire1") && canAttack && !isFlying)
+            if (Input.GetButtonDown("Fire1") && canAttack && !isFlying && haveHammer)
             {
                 playerAnim.SetTrigger("hammerAttack");
                 canAttack = false;
@@ -158,7 +193,7 @@ public class TMPlayerController : MonoBehaviour
             }
 
             // Ball Attack
-            if (Input.GetButtonDown("Fire2") && canAttack && !isFlying)
+            if (Input.GetButtonDown("Fire2") && canAttack && !isFlying && haveBall)
             {
                 playerAnim.SetTrigger("ballAttack");
                 canAttack = false;
@@ -170,7 +205,7 @@ public class TMPlayerController : MonoBehaviour
                 playerRB.AddForce(new Vector2(0, jumpForce));
             }
 
-            if (Input.GetButtonDown("Jump") && !isGrounded && !isFlying)
+            if (Input.GetButtonDown("Jump") && !isGrounded && !isFlying && haveCape)
             {
                 isFlying = true;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForceOnFlying);
