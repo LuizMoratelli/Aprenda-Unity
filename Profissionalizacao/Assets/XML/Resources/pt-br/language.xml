@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language>
+  <interface name="interface_titulo">
+    <textos>
+      <txt>Pressione ESC para opções</txt>
+      <txt>Pressione Enter para jogar</txt>
+    </textos>
+  </interface>
+  <interface name="interface_loja">
+    <textos>
+      <txt>Martelo</txt>
+      <txt>Capa</txt>
+      <txt>Capacete</txt>
+    </textos>
+  </interface>
+</language>

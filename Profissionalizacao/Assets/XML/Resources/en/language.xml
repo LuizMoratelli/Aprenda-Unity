@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language>
+  <interface name="interface_titulo">
+    <textos>
+      <txt>Press ESC to options</txt>
+      <txt>Pess Return to play</txt>
+    </textos>
+  </interface>
+  <interface name="interface_loja">
+    <textos>
+      <txt>Hammer</txt>
+      <txt>Cape</txt>
+      <txt>Snorkeling</txt>
+    </textos>
+  </interface>
+</language>

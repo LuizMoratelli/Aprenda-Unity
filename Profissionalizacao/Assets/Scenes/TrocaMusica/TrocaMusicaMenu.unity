@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionController
       objectReference: {fileID: 0}
+    - target: {fileID: 7665806463574311901, guid: d25ed36d99754a84aa67d6c6a513db64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7665806463574311898, guid: d25ed36d99754a84aa67d6c6a513db64,
         type: 3}
       propertyPath: m_LocalPosition.x

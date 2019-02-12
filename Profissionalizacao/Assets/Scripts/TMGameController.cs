@@ -25,6 +25,8 @@ public class TMGameController : MonoBehaviour
     [SerializeField] private Text extraLeftTxt;
     [SerializeField] private Text coinsTxt;
     [SerializeField] private Text scoreTxt;
+    [SerializeField] private Text languageTxt;
+    private LoadXMLFile loadXMLFile;
 
     private int rings;
     private int score;
@@ -42,10 +44,22 @@ public class TMGameController : MonoBehaviour
         score += scoreAmount;
         scoreTxt.text = score.ToString();
     }
+    public void TrocarIdioma(string idioma)
+    {
+        PlayerPrefs.SetString("idioma", idioma);
+        loadXMLFile.LoadXMLData();
+        languageTxt.text = loadXMLFile.InterfaceTitulo[0];
+    }
     #endregion
 
     #region Private Methods
     #region Unity Default Methods
+    private void Start()
+    {
+        loadXMLFile = FindObjectOfType(typeof(LoadXMLFile)) as LoadXMLFile;
+        languageTxt.text = loadXMLFile.InterfaceTitulo[0];
+    }
+
     private void Awake()
     {
         if (!Instance)
