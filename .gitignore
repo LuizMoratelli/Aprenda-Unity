@@ -34,3 +34,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#CardPrototype - Sprites
+CardPrototype/Assets/Art/
